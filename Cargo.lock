@@ -734,13 +734,14 @@ dependencies = [
 
 [[package]]
 name = "qqg"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "clap",
  "reqwest",
  "select",
  "serde",
  "serde_json",
+ "url",
 ]
 
 [[package]]

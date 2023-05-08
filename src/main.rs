@@ -6,10 +6,9 @@ use qqg::extract_links;
 const BASE_URL: &str = "https://html.duckduckgo.com/html/?q=";
 
 fn main() {
-    let matches = App::new("ddg-search")
-        .version("0.1.0")
-        .author("Your Name <you@example.com>")
-        .about("Search DuckDuckGo from the command line")
+    let matches = App::new("qqg")
+        .version("0.2.0")
+        .about("A small CLI search tool.")
         .arg(
             Arg::with_name("query")
                 .value_name("QUERY")
@@ -45,13 +44,17 @@ fn main() {
     if json_output {
         let json_str = serde_json::to_string(&links).expect("Failed to serialize to JSON");
         println!("{}", json_str);
+        println!("");
     } else if headers_only {
         for link in &links {
             println!("{}", link.title.to_lowercase().trim());
         }
     } else {
         for link in &links {
-            println!("## [{}]({})\n\n{}", link.title, link.href, link.description);
+            println!(
+                "## [{}]({})\n\n{}\n\n",
+                link.title, link.href, link.description
+            );
         }
     }
 }
