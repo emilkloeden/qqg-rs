@@ -2,12 +2,13 @@ use serde_json;
 
 use clap::{App, Arg};
 use qqg::extract_links;
+use reqwest::header::{HeaderMap, USER_AGENT};
 
 const BASE_URL: &str = "https://html.duckduckgo.com/html/?q=";
 
 fn main() {
     let matches = App::new("qqg")
-        .version("0.2.0")
+        .version("0.2.1")
         .about("A small CLI search tool.")
         .arg(
             Arg::with_name("query")
@@ -34,10 +35,22 @@ fn main() {
     let headers_only = matches.is_present("headers");
 
     let url = format!("{}{}", BASE_URL, query);
-    let response = reqwest::blocking::get(&url).expect("Failed to fetch results");
+    let mut headers = HeaderMap::new();
+
+    headers.insert(
+        USER_AGENT,
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"
+            .parse()
+            .unwrap(),
+    );
+
+    let client = reqwest::blocking::Client::builder()
+        .default_headers(headers)
+        .build()
+        .expect("Unable to create reqwest client");
+    let response = client.get(&url).send().expect("Error retrieving response.");
 
     let result_html = response.text().expect("Failed to read response");
-    // let result_html = dbg!(result_html);
 
     let links = extract_links(&result_html);
 

@@ -63,7 +63,6 @@ pub fn extract_links(result_html: &str) -> Vec<Link> {
                 .unwrap()
                 .trim()
                 .to_string();
-            println!("{:#?}", title);
             let href = node
                 .find(Class("result__snippet"))
                 .next()
