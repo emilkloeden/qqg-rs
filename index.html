@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QQG</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+        @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+        html,
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+                "Helvetica Neue", sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            background: rgb(34, 193, 195);
+            background: linear-gradient(90deg,
+                    rgba(34, 193, 195, 1) 0%,
+                    rgba(223, 45, 253, 1) 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 0rem;
+        }
+
+        .row:nth-child(even) {
+            background-color: blueviolet;
+            color: #dfdead;
+        }
+
+        .terminal {
+            width: 70vw;
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+            font-family: "Ubuntu";
+            color: #dfdead;
+            border-radius: 2px;
+            /* margin-bottom: 5em; */
+        }
+
+        .terminal-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0.2em;
+            padding-left: 1em;
+            background: linear-gradient(#504b45 0%, #3c3b37 100%);
+        }
+
+        .terminal-body {
+            background-color: #300a24;
+
+            overflow: hidden;
+            font-family: "Ubuntu Mono";
+        }
+
+        pre {
+            font-family: "Ubuntu Mono";
+        }
+
+        .button-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 0.7em;
+
+        }
+
+        .terminal-button {
+            height: 10px;
+            width: 10px;
+            font-size: 6px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 100%;
+            background-color: lightgray;
+        }
+
+        .terminal-button:nth-child(1) {
+            background-color: red;
+
+        }
+
+        .centered-col {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            color: green;
+            gap: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="row">
+            <h1>QQG</h1>
+            <p>A small CLI search tool.</p>
+        </div>
+        <div class="row">
+            <div class="terminal">
+                <div class="terminal-row">
+                    <div class="button-row">
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <p>$ qqg --help</p>
+                    <pre>
+qqg 0.2.1
+A small CLI search tool.
+
+USAGE:
+    qqg.exe [OPTIONS] <QUERY>
+
+ARGS:
+    <QUERY>    The search query
+
+OPTIONS:
+    -h, --help       Print help information
+    -H, --headers    Output only the headers of the search results
+    -j, --json       Output results as JSON
+    -V, --version    Print version information
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p>Get results in easy-to-read markdown styling...</p>
+            <div class="terminal">
+                <div class="terminal-row">
+                    <div class="button-row">
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <p>$ qqg "awesome cli tools"</p>
+                    <p>## [GitHub - agarrharr/awesome-cli-apps: 🖥 📊 🕹 🛠 A curated list of command
+                        ...](https://github.com/agarrharr/awesome
+                        -cli-apps)</p>
+                    <p>wallpaper-cli - Get or set the desktop wallpaper. themer - Generate personalized themes for your
+                        editor, terminal, wallpaper, Slack, and more. JackPaper - Set images from Unsplash as wallpaper.
+                        pywal - Generate and change color-schemes, then apply them system-wide to all of your favourite
+                        programs.</p>
+
+
+                    <p>[GitHub - alebcay/awesome-shell: A curated list of awesome command-line
+                        ...](https://github.com/alebcay/awesome-shell)</p>
+
+                    <p>googlr - Command line tool that lets you search Google from your terminal. has - has helps you
+                        check presence of various command line tools and their versions on path; how2 - how2 finds the
+                        simplest way to do something in a unix shell. It's like man, but you can query it in natural
+                        language. navi - An interactive cheatsheet tool for the command ...</p>
+
+                    <p>## [Kikobeats/awesome-cli - Github](https://github.com/Kikobeats/awesome-cli)</p>
+
+                    <p>fx - Command-line JSON processing tool. fzf - A command-line fuzzy finder. gnomon - Perfect for
+                        analyze quickly logs. htop - htop is an interactive top. httpstat - curl statistics made simple.
+                        hub - It helps you win at git. hyperfine - A command-line benchmarking tool. jq - Command-line
+                        JSON processor. 1; gron - Make JSON greppable. glow ...</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p>or in JSON...</p>
+            <div class="terminal">
+                <div class="terminal-row">
+                    <div class="button-row">
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                        <span class="terminal-button"></span>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <p>$ qqg -j "awesome cli tools" | jq</p>
+                    <pre>[
+  {
+    "title": "GitHub - agarrharr/awesome-cli-apps: 🖥 📊 🕹 🛠 A curated list of command ..."   ,
+    "href": "",
+    "description": "wallpaper-cli - Get or set the desktop wallpaper. themer - Generate personalized themes for your editor, terminal, wallpaper, Slack, and more. JackPaper - Set images from Unsplash as wallpaper. pywal - Generate and change color-schemes, then apply them system-wide to all of your favourite programs."
+  },
+  {
+    "title": "GitHub - alebcay/awesome-shell: A curated list of awesome command-line ...",
+    "href": "",
+    "description": "googlr - Command line tool that lets you search Google from your terminal. has - has helps you check presence of various command line tools and their versions on path; how2 - how2 finds the simplest way to do something in a unix shell. It's like man, but you can query it in natural language. navi - An interactive cheatsheet tool for the command ..."
+  },
+  {
+    "title": "Kikobeats/awesome-cli - Github",
+    "href": "",
+    "description": "fx - Command-line JSON processing tool. fzf - A command-line fuzzy finder. gnomon - Perfect for analyze quickly logs. htop - htop is an interactive top. httpstat - curl statistics made simple. hub - It helps you win at git. hyperfine - A command-line benchmarking tool. jq - Command-line JSON processor. 1; gron - Make JSON greppable. glow ..."
+  },
+  ...
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Download the latest release for Windows or Linux</h3>
+            <div class="centered-col">
+                <p><a href="https://github.com/emilkloeden/qqg-rs/releases"><img src="windows-logo.svg" height="30px"
+                            alt="Download for Windows."></a></p>
+                <p><a href="https://github.com/emilkloeden/qqg-rs/releases"><img src="linux-logo.svg" height="30px"
+                            alt="Download for Linux."></a></p>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Visit us on GitHub</h3>
+            <p><a href="https://github.com/emilkloeden/qqg-rs/releases"><img src="github-logo.svg" height="30px"
+                        alt="GitHub repository."></a></p>
+        </div>
+    </div>
+</body>
+
+</html>
