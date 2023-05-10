@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    90deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(223, 45, 253, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0rem;
+}
+
+.row:nth-child(even) {
+  background-color: blueviolet;
+  color: #dfdead;
+}
+
+.terminal {
+  width: 70vw;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  font-family: "Ubuntu";
+  color: #dfdead;
+  border-radius: 2px;
+  /* margin-bottom: 5em; */
+}
+
+.terminal-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0.2em;
+  padding-left: 1em;
+  background: linear-gradient(#504b45 0%, #3c3b37 100%);
+}
+
+.terminal-body {
+  background-color: #300a24;
+
+  overflow: hidden;
+  font-family: "Ubuntu Mono";
+}
+
+pre {
+  font-family: "Ubuntu Mono";
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.7em;
+}
+
+.terminal-button {
+  height: 10px;
+  width: 10px;
+  font-size: 6px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 100%;
+  background-color: lightgray;
+}
+
+.terminal-button:nth-child(1) {
+  background-color: red;
+}
+
+.centered-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: green;
+  gap: 2em;
+}
