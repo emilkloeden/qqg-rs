@@ -1,6 +1,6 @@
 [package]
 name = "qqg"
-version = "0.3.0"
+version = "0.4.0"
 edition = "2021"
 license = "MIT"
 description = "A small CLI search tool."
@@ -10,7 +10,7 @@ repository = "https://github.com/emilkloeden/qqg-rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-reqwest = { version = "0.11", features = ["blocking", "json"] }
+reqwest = { version = "0.11", features = ["blocking", "json", "rustls-tls"],  default-features = false }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 clap = "3.0"
