@@ -8,7 +8,7 @@ const BASE_URL: &str = "https://html.duckduckgo.com/html/?q=";
 
 fn main() {
     let matches = App::new("qqg")
-        .version("0.3.0")
+        .version("1.0.0")
         .about("A small CLI search tool.")
         .arg(
             Arg::with_name("query")
