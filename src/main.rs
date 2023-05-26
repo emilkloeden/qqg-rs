@@ -8,7 +8,7 @@ const BASE_URL: &str = "https://html.duckduckgo.com/html/?q=";
 
 fn main() {
     let matches = App::new("qqg")
-        .version("1.0.0")
+        .version("1.1.0")
         .about("A small CLI search tool.")
         .arg(
             Arg::with_name("query")
@@ -28,11 +28,18 @@ fn main() {
                 .long("headers")
                 .help("Output only the headers of the search results"),
         )
+        .arg(
+            Arg::with_name("urls")
+                .short('u')
+                .long("urls")
+                .help("Output only the urls of the search results"),
+        )
         .get_matches();
 
     let query = matches.value_of("query").unwrap();
     let json_output = matches.is_present("json");
     let headers_only = matches.is_present("headers");
+    let urls_only = matches.is_present("urls");
 
     let url = format!("{}{}", BASE_URL, query);
     let mut headers = HeaderMap::new();
@@ -61,6 +68,10 @@ fn main() {
     } else if headers_only {
         for link in &links {
             println!("{}", link.title.to_lowercase().trim());
+        }
+    } else if urls_only {
+        for link in &links {
+            println!("{}", link.href.trim());
         }
     } else {
         for link in &links {
