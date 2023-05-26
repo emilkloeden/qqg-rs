@@ -18,6 +18,7 @@ ARGS:
 OPTIONS:
     -h, --help       Print help information
     -H, --headers    Output only the headers of the search results
+    -u, --urls       Output only the urls of the search results
     -j, --json       Output results as JSON
     -V, --version    Print version information
 ```
@@ -61,6 +62,18 @@ tokyo disney resort online reservations & tickets
 tokyo disneyland (maihama): all you need to know before you go
 tokyo disneyland - tokyo disney resort guide - japan-guide.com
 tokyo disneyland (maihama) - all you need to know before you go
+...
+
+```
+
+URLs only
+
+```
+$ qqg -u "tokyo disney"
+
+https://www.tokyodisneyresort.jp/
+https://www.tokyodisneyresort.jp/en/
+https://reserve.tokyodisneyresort.jp/en/about/vp_01
 ...
 
 ```
